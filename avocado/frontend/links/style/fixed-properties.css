@@ -1,0 +1,68 @@
+/*Шрифты*/
+@font-face {
+    font-family: gilroy-medium;
+    src: url("../fonts/gilroy-medium.ttf");
+}
+@font-face {
+    font-family: gilroy-bold;
+    src: url("../fonts/gilroy-bold.ttf");
+}
+@font-face {
+    font-family: gilroy-regular;
+    src: url("../fonts/gilroy-regular.ttf");
+}
+
+/*Тело страницы*/
+body{
+    padding: 0;
+    margin: 0;
+}
+body::-webkit-scrollbar{
+    width: 0;
+}
+
+/*Текстовые селекторы*/
+h1::selection{
+    background: #16A23A;
+    color: white;
+}
+h2::selection{
+    background: #16A23A;
+    color: white;
+}
+h3::selection{
+    background: #16A23A;
+    color: white;
+}
+h4::selection{
+    background: #16A23A;
+    color: white;
+}
+a::selection{
+    background: #16A23A;
+    color: white;
+}
+p::selection{
+    background: #16A23A;
+    color: white;
+}
+span::selection{
+    background: #16A23A;
+    color: white;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    font-family: gilroy-regular;
+}
+span{
+    color: #16a23a;
+    text-decoration: underline;
+}
+
+/*Класс обоев*/
+.wallpaper-block {
+    /*background-image: url("../image/avocado-wallpaper1.png");*/
+    background: #c8e7cd;
+}

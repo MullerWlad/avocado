@@ -1,0 +1,343 @@
+/*Класс горизонтальных межблочных флексбоксов*/
+.horizon-display-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Класс горизонтальных не межблочных флексбоксов*/
+.horizon-display-around{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Класс вертикальных центральных флексбоксов*/
+.vertical-display-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Класс горизонтальных центральных флексбоксов*/
+.horizon-display-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Класс вертикальных межблочных флексбоксов*/
+.vertical-display-between{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Класс вертикальных не межблочных флексбоксов*/
+.vertical-display-around{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Топбар*/
+.topbar-content-block {
+    width: 100%;
+    height: 6vw;
+    background: #f4f4f4;
+    border-bottom: #dedede 0.3vmin solid;
+    position: fixed;
+}
+
+/*Главный блок*/
+.general-content-block {
+    width: 100vw;
+    /*background-color: #c9d6cb;*/
+    padding: 10vw 0 5vw 0;
+    min-height: 100vh;
+    align-items: flex-start;
+}
+.block-around-selection {
+    width: 40vw;
+    border-radius: 1vw;
+    padding: 1.5vw 0 1.5vw 0;
+    background: #55b386;
+}
+.block-around-table {
+    min-width: 40vw;
+    min-height: 40vw;
+    max-width: 55vw;
+    border-radius: 1vw;
+    background: #e4ffe3;
+    /*border: solid #55b386 0.5vw;*/
+    margin-top: 2vw;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.refactor-block {
+    padding: 1vw;
+    margin-right: 2vw;
+    border-radius: 1vw;
+    background: #e4ffe3;
+}
+/*Формы*/
+.home-form {
+    width: 37vw;
+    /*height: 35vmax;*/
+    background: #43a95d;
+    border-radius: 1vw;
+    padding: 1.5vw;
+    margin-top: 2vw;
+}
+.home-form-background-special-one {
+    background: #0c8f52;
+}
+.home-form-background-special-two {
+    background: #55b386;
+}
+.input-form {
+    width: 75%;
+    height: 2.2vw;
+    margin: 0.7vw;
+    outline: none;
+    border: none;
+    font-family: gilroy-regular;
+    transition-duration: 0.5s;
+    padding: 0 1vw 0 1vw;
+    border-radius: 1vw;
+    background: #e4ffe3;
+}
+.input-form::placeholder {
+    color: #16A23A;
+    font-size: 1vw;
+    font-family: gilroy-medium;
+}
+.input-form:focus {
+    border-radius: 0.5vw;
+}
+.textarea-form {
+    width: 75%;
+    height: 12vw;
+    margin: 0.7vw;
+    outline: none;
+    border: none;
+    font-family: gilroy-regular;
+    transition-duration: 0.5s;
+    padding: 1vw 1vw 0 1vw;
+    border-radius: 1vw;
+    resize: none;
+    background: #e4ffe3;
+}
+.textarea-form::placeholder{
+    color: #16A23A;
+    font-size: 1vw;
+    font-family: gilroy-medium;
+}
+.textarea-form:focus {
+    border-radius: 0.5vw;
+}
+.textarea-form::-webkit-scrollbar{
+    width: 0;
+}
+.input-form::selection{
+    background: #16A23A;
+    color: white;
+}
+.textarea-form::selection{
+    background: #16A23A;
+    color: white;
+}
+.select-form::selection{
+    background: #16A23A;
+    color: white;
+}
+.button-form-in-creation::selection{
+    background: #16A23A;
+    color: white;
+}
+.button-form-in-creation {
+    background: #984a78;
+    margin: 0.7vw;
+    border: none;
+    transition-duration: 0.5s;
+    padding: 1vw 5vw 1vw 5vw;
+    border-radius: 1vw;
+    cursor: pointer;
+    user-select: none;
+}
+.button-form-in-creation:hover {
+    background: #d266a6;
+}
+.special-icon {
+    width: 15vw;
+    height: 15vw;
+    background-image: url("../../links/image/empty.png");
+    margin: auto auto;
+}
+
+/*Треи выбора*/
+.select-form {
+    width: 85%;
+    margin: 0.7vw;
+    outline: none;
+    border: none;
+    font-family: gilroy-regular;
+    transition-duration: 0.5s;
+    padding: 0 1vw 0 1vw;
+    border-radius: 1vw;
+    background: #e4ffe3;
+    appearance: none;
+}
+.option-form {
+    width: 100%;
+    cursor: pointer;
+}
+.select-form::selection{
+    background: #16A23A;
+    color: white;
+}
+.select-form-in-creation {
+    width: 75%;
+    margin: 0.7vw;
+    outline: none;
+    border: none;
+    font-family: gilroy-regular;
+    transition-duration: 0.5s;
+    padding: 0 1vw 0 1vw;
+    border-radius: 1vw;
+    background: #e4ffe3;
+    appearance: none;
+}
+.option-form-in-creation {
+    width: 100%;
+    cursor: pointer;
+}
+.select-form-in-creation::selection{
+    background: #16A23A;
+    color: white;
+}
+
+/*Кнопка, импортированная с general-style-home*/
+.button-form::selection{
+    background: #16A23A;
+    color: white;
+}
+.button-form {
+    background: #984a78;
+    margin: 0 0 0 4vw;
+    border: none;
+    transition-duration: 0.5s;
+    padding: 1vw 3vw 1vw 3vw;
+    border-radius: 1vw;
+    cursor: pointer;
+    user-select: none;
+}
+.button-form:hover {
+    background: #d266a6;
+}
+
+/*Запись*/
+.record {
+    width: 25vw;
+    min-height: 12vw;
+    margin: 1vw;
+    background: #bbe7d2;
+    border-radius: 1vw;
+}
+.user-icon {
+    margin: 3vw;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100vw;
+    background: #e4ffe3;
+}
+.record-information-block {
+    width: 80%;
+    background: #e4ffe3;
+    border-radius: 1vw;
+    padding: 0 1vw 0 1vw;
+    margin-bottom: 1.5vw;
+    margin-top: 1.5vw;
+}
+.button-record::selection{
+    background: #16A23A;
+    color: white;
+}
+.button-record {
+    background: #984a78;
+    border: none;
+    transition-duration: 0.5s;
+    padding: 1vw 3vw 1vw 3vw;
+    border-radius: 1vw;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 0 1.5vw 0;
+    text-align: center;
+}
+.button-record:hover {
+    background: #d266a6;
+}
+
+/*Футер*/
+.footer-content-block {
+    width: 100%;
+    height: 6vw;
+    background: #f4f4f4;
+    border-top: #dedede 0.3vmin solid;
+}
+
+/*Класс логотипа*/
+.logotype-block {
+    background-image: url("../image/avocado-png-logo.png");
+    width: 4vw;
+    height: 4vw;
+}
+
+/*Класс фоновых изображений*/
+.image-block {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/*Цвет шрифта*/
+.text-white {
+    color: white;
+}
+.text-black {
+    color: black;
+}
+.text-green {
+    color: #16A23A;
+}
+.text-grey {
+    color: #9B9897;
+}
+
+/*Размер теста*/
+.text-size-easy {
+    font-size: 1vw;
+}
+.text-size-medium {
+    font-size: 1.5vw;
+}
+.text-size-hard {
+    font-size: 2vw;
+}
+
+/*Классы шрифтов*/
+.gilroy-medium {
+    font-family: gilroy-medium;
+}
+.gilroy-regular {
+    font-family: gilroy-regular;
+}
+.gilroy-bold {
+    font-family: gilroy-bold;
+}

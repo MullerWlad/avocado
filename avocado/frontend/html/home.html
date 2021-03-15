@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--meta tags-->
+    <meta charset="UTF-8">
+
+    <!--links-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="shortcut icon" href="../links/image/avocado-png-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../links/style/fixed-properties.css">
+    <link rel="stylesheet" href="../links/style/general-style-home.css">
+    <link rel="stylesheet" media="screen and (color)" href="../links/style/media-queries/general-style-home-media-phone.css">
+    <link rel="stylesheet" media="screen and (color)" href="../links/style/media-queries/general-style-home-media-middle.css">
+    <script src="../links/scripts/home-script.js"></script>
+
+    <!--another-->
+    <title>Avoсado Home</title>
+</head>
+<body class="image-block wallpaper-block vertical-display-between">
+    <!--topbar-->
+    <div class="horizon-display-center topbar-content-block">
+        <div class="image-block logotype-block"></div>
+        <p class="text-black text-size-hard gilroy-bold topbar-service-name"> Авокадо</p>
+    </div>
+
+    <!--general-->
+    <div class="general-content-block horizon-display-center">
+
+        <!--Registration / Autorisation-->
+        <form class="home-form home-form-background-special-two vertical-display-around">
+            <div class="go-in-block image-block"></div>
+            <div class="select-form vertical-display-center">
+                <p class="option-form text-green text-size-easy gilroy-bold">Выберите тип аккаунта</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Администратор</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Пользователь</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Организация</p>
+            </div>
+            <div class="select-form vertical-display-center">
+                <p class="option-form text-green text-size-easy gilroy-bold">Регистрация / Авторизация</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Регистрация</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Авторизация</p>
+            </div>
+
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Логин">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Пароль">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Логин организации">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Логин администратора">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Имя организации">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Ваше Имя">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Ваша Фамилия">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Ваше Отчество">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Ваш телефон или email">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Должность">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Ваш этаж">
+            <input class="form-input-database input-form text-size-easy text-black" placeholder="Ваш кабинет">
+
+            <p class="button-form text-size-easy text-white gilroy-medium">Войти</p>
+        </form>
+
+        <div class="between-forms-block"></div>
+
+        <!--Send Us-->
+        <form class="home-form home-form-background-special-one vertical-display-around">
+            <p class="gilroy-medium text-size-hard text-white send-us-text">Напишите нам</p>
+            <input class="input-form text-size-easy text-black" placeholder="Ваше имя / организация">
+            <input class="input-form text-size-easy text-black" placeholder="Ваш email">
+            <textarea class="textarea-form text-size-easy text-black" placeholder="Ваше сообщение"></textarea>
+            <p class="button-form text-size-easy text-white gilroy-medium">Отправить</p>
+        </form>
+    </div>
+
+    <!--footer-->
+    <div class="horizon-display-center footer-content-block">
+        <p class="text-grey text-size-easy gilroy-bold footer-service-producer" id="place">© Melnik 2020 - {{ message }}</p>
+    </div>
+
+    <script>
+        /*Дата для Футера*/
+        new Vue({
+            el: '#place',
+            data: {
+                message: new Date().getFullYear(),
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+@media only screen and (max-width : 480px){
+
+    /*Топбар*/
+    .topbar-content-block {
+        height: 15vw;
+    }
+    .logotype-block {
+        background-image: url("../../image/avocado-png-logo.png");
+        width: 11vw;
+        height: 11vw;
+    }
+
+    /*Авокадо*/
+    .topbar-service-name {
+        font-size: 5vw;
+    }
+
+    /*Футер*/
+    .footer-content-block {
+        height: 15vw;
+    }
+
+    /*Melnik*/
+    .footer-service-producer {
+        font-size: 3vw;
+    }
+
+    /*Главный блок*/
+    .general-content-block {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 18vw 0 18vw 0;
+        /*background-color: #c9d6cb;*/
+    }
+    .block-around-selection {
+        width: 80vw;
+        border-radius: 2vw;
+        padding: 3vw 0 3vw 0;
+    }
+    .block-around-table {
+        min-width: 80vw;
+        min-height: 80vw;
+        max-width: 80vw;
+        border-radius: 2vw;
+        margin-top: 4vw;
+    }
+    .special-icon {
+        width: 40vw;
+        height: 40vw;
+    }
+    .chooser-creation-table-block-for-media {
+        margin-top: 6vw;
+    }
+    .refactor-block {
+        margin-right: 0;
+    }
+    .home-form {
+        width: 69vw;
+        border-radius: 3vw;
+        padding: 4.5vw;
+        margin-top: 5vw;
+    }
+    .send-us-text {
+        font-size: 6vw;
+    }
+    .textarea-form {
+        height: 36vw;
+        margin: 2.1vw;
+        padding: 3vw 3vw 0 3vw;
+        border-radius: 3vw;
+        font-size: 3vw;
+    }
+    .textarea-form::placeholder{
+        font-size: 3vw;
+    }
+    .textarea-form:focus {
+        border-radius: 1.5vw;
+    }
+    .button-form-in-creation {
+        margin: 2.1vw;
+        padding: 3vw 15vw 3vw 15vw;
+        border-radius: 3vw;
+        font-size: 3vw;
+    }
+    .select-form-in-creation {
+        padding: 0 3vw 0 3vw;
+        border-radius: 3vw;
+        margin: 2vw 0 1vw 0;
+    }
+    .option-form-in-creation {
+        font-size: 3vw;
+    }
+
+    /*Запись*/
+    .record {
+        width: 75vw;
+        min-height: 40vw;
+        margin: 2vw;
+        border-radius: 2vw;
+    }
+    .user-icon {
+        margin: 9vw;
+        width: 30vw;
+        height: 30vw;
+    }
+    .record-information-block {
+        width: 80%;
+        border-radius: 3vw;
+        padding: 0 3vw 0 3vw;
+        margin-bottom: 4.5vw;
+        margin-top: 4.5vw
+    }
+    .information-media {
+        font-size: 3vw;
+    }
+    .button-record {
+        padding: 3vw 12vw 3vw 12vw;
+        border-radius: 3vw;
+        margin: 0 0 4.5vw 0;
+        font-size:  2.5vw;
+    }
+
+    /*Треи выбора*/
+    .select-form {
+        width: 85%;
+        margin: 1.4vw;
+        padding: 0 2vw 0 2vw;
+        border-radius: 2vw;
+    }
+    .option-form {
+        font-size: 3vw;
+    }
+
+    /*Кнопки*/
+    .button-form {
+        margin: 0 0 0 8vw;
+        padding: 3vw 10vw 3vw 10vw;
+        border-radius: 3vw;
+        font-size: 3vw;
+    }
+}

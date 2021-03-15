@@ -1,0 +1,81 @@
+@media only screen and (min-width: 481px) and (max-width : 800px) {
+
+    /*Топбар*/
+    .topbar-content-block {
+        height: 8vw;
+    }
+    .logotype-block {
+        background-image: url("../../image/avocado-png-logo.png");
+        width: 6vw;
+        height: 6vw;
+    }
+    .topbar-service-name {
+        font-size: 3vw;
+    }
+
+    /*Футер*/
+    .footer-content-block {
+        height: 8vw;
+    }
+    .footer-service-producer {
+        font-size: 1.5vw;
+    }
+
+    /*Форма*/
+    .home-form {
+        width: 34.5vw;
+        border-radius: 2.25vw;
+        padding: 2.25vw;
+    }
+    .send-us-text {
+        font-size: 3vw;
+    }
+
+    /*Класс иконки входа*/
+    .go-in-block {
+        width: 9vw;
+        height: 9vw;
+    }
+
+    /*Треи выбора*/
+    .select-form {
+        padding: 0 1.5vw 0 1.5vw;
+        border-radius: 1.5vw;
+        /*margin: 2vw 0 1vw 0;*/
+    }
+    .option-form {
+        font-size: 1.5vw;
+    }
+    .input-form {
+        height: 3.3vw;
+        margin: 1.05vw;
+        padding: 0 1.5vw 0 1.5vw;
+        border-radius: 1.5vw;
+        font-size: 1.5vw;
+    }
+    .input-form::placeholder {
+        font-size: 1.5vw;
+    }
+    .input-form:focus {
+        border-radius: 0.75vw;
+    }
+    .textarea-form {
+        height: 18vw;
+        margin: 1.05vw;
+        padding: 1.5vw 1.5vw 0 1.5vw;
+        border-radius: 1.5vw;
+        font-size: 1.5vw;
+    }
+    .textarea-form::placeholder{
+        font-size: 1.5vw;
+    }
+    .textarea-form:focus {
+        border-radius: 0.75vw;
+    }
+    .button-form {
+        margin: 1.05vw;
+        padding: 1.5vw 7.5vw 1.5vw 7.5vw;
+        border-radius: 1.5vw;
+        font-size: 1.5vw;
+    }
+}
