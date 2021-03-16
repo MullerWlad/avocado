@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--meta tags-->
+    <meta charset="UTF-8">
+
+    <!--links-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="shortcut icon" href="../links/image/avocado-png-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../links/style/fixed-properties.css">
+
+    <!--Используем те же стили, что и в home.html-->
+    <link rel="stylesheet" href="../links/style/general-style-home.css">
+    <link rel="stylesheet" media="screen and (color)" href="../links/style/media-queries/general-style-home-media-phone.css">
+    <link rel="stylesheet" media="screen and (color)" href="../links/style/media-queries/general-style-home-media-middle.css">
+
+    <script src="../links/scripts/global-admin-home-script.js"></script>
+
+    <!--another-->
+    <title>Avoсado global Sign in</title>
+</head>
+<body class="image-block wallpaper-block vertical-display-between">
+<!--topbar-->
+<div class="horizon-display-center topbar-content-block">
+    <div class="image-block logotype-block"></div>
+    <p class="text-black text-size-hard gilroy-bold topbar-service-name"> Авокадо</p>
+</div>
+
+<!--general-->
+<div class="general-content-block horizon-display-center">
+
+    <!--Registration / Autorisation-->
+    <form class="home-form home-form-background-special-two vertical-display-around">
+        <div class="image-block go-in-block"></div>
+        <input class="form-input-database input-form text-size-easy text-black" placeholder="Логин">
+        <input class="form-input-database input-form text-size-easy text-black" placeholder="Пароль">
+        <p class="button-form text-size-easy text-white gilroy-medium">Войти</p>
+    </form>
+</div>
+
+<!--footer-->
+<div class="horizon-display-center footer-content-block">
+    <p class="text-grey text-size-easy gilroy-bold footer-service-producer" id="place">© Melnik 2020 - {{ message }}</p>
+</div>
+
+<script>
+    /*Дата для Футера*/
+    new Vue({
+        el: '#place',
+        data: {
+            message: new Date().getFullYear(),
+        },
+    })
+</script>
+</body>
+</html>

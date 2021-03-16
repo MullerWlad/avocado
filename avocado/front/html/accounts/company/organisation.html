@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--meta tags-->
+    <meta charset="UTF-8">
+
+    <!--links-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="shortcut icon" href="../../../links/image/avocado-png-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../links/style/fixed-properties.css">
+    <link rel="stylesheet" href="../../../links/style/general-style-organisation.css">
+    <link rel="stylesheet" media="screen and (color)" href="../../../links/style/media-queries/general-style-organisation-media-phone.css">
+    <link rel="stylesheet" media="screen and (color)" href="../../../links/style/media-queries/general-style-organisation-media-middle.css">
+    <script src="../../../links/scripts/organisation-script.js"></script>
+
+    <!--Another-->
+    <title id="title">{{message}}</title>
+
+</head>
+<body class="image-block wallpaper-block">
+    <!--topbar-->
+    <div class="horizon-display-center topbar-content-block">
+        <div class="image-block logotype-block"></div>
+        <p class="text-black text-size-hard gilroy-bold topbar-service-name"> Авокадо</p>
+        <p class="button-form text-size-easy text-white gilroy-medium">Выйти</p>
+    </div>
+
+    <!--general-->
+    <div class="general-content-block vertical-display-center">
+
+        <!--chooser-->
+        <div class="block-around-selection vertical-display-center">
+            <div class="select-form vertical-display-center">
+                <p class="option-form text-green text-size-easy gilroy-bold">Выберите тип таблицы</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Заявки администраторов</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Администраторы</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Пользователи</p>
+            </div>
+        </div>
+
+        <!--table-->
+        <div class="block-around-table horizon-display-between" id="table">
+            <div class="special-icon image-block"></div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="horizon-display-center footer-content-block">
+        <p class="text-grey text-size-easy gilroy-bold footer-service-producer" id="place">© Melnik 2020 - {{ message }}</p>
+    </div>
+
+    <script>
+        /*Компонент user отображается тольако в состоянии active*/
+        /*Запись admin в block-around-table*/
+        var recordInactiveAdmin = Vue.component('record-inactive-admin', {
+            data: function () {
+                return {
+                    login: '',
+                    organisation: '',
+                    password: '',
+                    date: '',
+                    firstName: '',
+                    lastName: '',
+                    patronymic: '',
+                    phone: '',
+                    photo: '',
+                    existence: true,
+                }
+            },
+            methods: {
+                setLogin (login_, organisation_, password_, date_, firstName_, lastName_, patronymic_, phone_, photo_) {
+                    this.login = login_;
+                    this.organisation = organisation_;
+                    this.password = password_;
+                    this.date = date_;
+                    this.firstName = firstName_;
+                    this.lastName = lastName_;
+                    this.patronymic = patronymic_;
+                    this.phone = phone_;
+                    this.photo = photo_
+                },
+                deleteRecord() {
+                    this.existence = false;
+                }
+            },
+            template: '<div v-if="existence" class="record vertical-display-between">\n' +
+                    '<div class="user-icon image-block"></div>\n' +
+                    '<div class="record-information-block">\n' +
+                    '<p class="gilroy-regular text-green text-size-easy information-media">Логин: {{login}}</p>\n' +
+                    '<p class="gilroy-regular text-green text-size-easy information-media">Логин организации: {{organisation}}</p>\n' +
+                    '<p class="gilroy-regular text-green text-size-easy information-media">Пароль: {{password}}</p>\n' +
+                    '<p class="gilroy-regular text-green text-size-easy information-media">Дата регистрации: {{date}}</p>\n' +
+                    '<p class="gilroy-regular text-green text-size-easy information-media">Имя: {{firstName}}</p>\n' +
+                    '<p class="gilroy-regular text-green text-size-easy information-media">Фамилия: {{lastName}}</p>\n' +
+                    '<p class="gilroy-regular text-green text-size-easy information-media">Отчество: {{patronymic}}</p>\n' +
+                    '<p class="gilroy-regular text-green text-size-easy information-media">Телефон или email: {{phone}}</p>\n' +
+                    '</div>\n' +
+                    '<div>\n' +
+                    '<p @click="deleteRecord()" class="button-record text-size-easy text-white gilroy-medium">Подтвердить аккаунт</p>\n' +
+                    '<p @click="deleteRecord()" class="button-record text-size-easy text-white gilroy-medium">Удалить учетную запись</p>\n' +
+                    '</div>\n' +
+                    '</div>',
+        })
+
+        /*Запись admin inactive в block-around-table*/
+        var recordActiveAdmin = Vue.component('record-active-admin', {
+            data: function () {
+                return {
+                    login: '',
+                    organisation: '',
+                    password: '',
+                    date: '',
+                    firstName: '',
+                    lastName: '',
+                    patronymic: '',
+                    phone: '',
+                    photo: '',
+                    existence: true,
+                }
+            },
+            methods: {
+                setLogin (login_, organisation_, password_, date_, firstName_, lastName_, patronymic_, phone_, photo_) {
+                    this.login = login_;
+                    this.organisation = organisation_;
+                    this.password = password_;
+                    this.date = date_;
+                    this.firstName = firstName_;
+                    this.lastName = lastName_;
+                    this.patronymic = patronymic_;
+                    this.phone = phone_;
+                    this.photo = photo_;
+                },
+                deleteRecord(){
+                    this.existence = false;
+                },
+            },
+            template: '<div v-if="existence" class="record vertical-display-between"> \n' +
+                '<div class="user-icon image-block"></div> \n' +
+                '<div class="record-information-block"> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Логин: {{login}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Логин организации: {{organisation}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Пароль: {{password}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Дата регистрации: {{date}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Имя: {{firstName}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Фамилия: {{lastName}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Отчество: {{patronymic}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Телефон или email: {{phone}}</p> \n' +
+                '</div> \n' +
+                '<div> \n' +
+                '<p @click="deleteRecord()" class="button-record text-size-easy text-white gilroy-medium">Удалить учетную запись</p> \n' +
+                '</div> \n' +
+                '</div>',
+        })
+
+        /*Запись user active в block-around-table*/
+        var recordUser = Vue.component('record-user', {
+            data: function () {
+                return {
+                    login: '',
+                    organisation: '',
+                    adminLogin: '',
+                    password: '',
+                    date: '',
+                    firstName: '',
+                    lastName: '',
+                    patronymic: '',
+                    phone: '',
+                    cabinet: '',
+                    floor: '',
+                    rating: '',
+                    photo: '',
+                }
+            },
+            methods: {
+                setLogin (login_, organisation_, adminLogin_, password_, date_, firstName_, lastName_, patronymic_, phone_, cabinet_, floor_, rating_, photo_) {
+                    this.login = login_;
+                    this.organisation = organisation_;
+                    this.adminLogin = adminLogin_;
+                    this.password = password_;
+                    this.date = date_;
+                    this.firstName = firstName_;
+                    this.lastName = lastName_;
+                    this.patronymic = patronymic_;
+                    this.phone = phone_;
+                    this.cabinet = cabinet_;
+                    this.floor = floor_;
+                    this.rating = rating_;
+                    this.photo = photo_;
+                },
+            },
+            template: '<div class="record vertical-display-between"> \n' +
+                '<div class="user-icon image-block"></div> \n' +
+                '<div class="record-information-block"> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Логин: {{login}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Логин организации: {{organisation}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Логин администратора: {{adminLogin}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Пароль: {{password}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Дата регистрации: {{date}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Имя: {{firstName}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Фамилия: {{lastName}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Отчество: {{patronymic}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Телефон или email: {{phone}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Кабинет: {{cabinet}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Этаж: {{floor}}</p> \n' +
+                '<p class="gilroy-regular text-green text-size-easy information-media">Рейтинг: {{rating}}</p> \n' +
+                '</div> \n' +
+                '</div>',
+        })
+
+        /*Инициализация компонента таблицы*/
+        new Vue ({el: "#table"})
+
+        /*title*/
+        new Vue({
+            el: '#title',
+            data: {
+                message: "Название организации",
+            },
+            methods: {
+                setName (message_) {
+                    this.message = message_;
+                },
+            },
+        })
+
+        /*Дата для Футера*/
+        new Vue({
+            el: '#place',
+            data: {
+                message: new Date().getFullYear(),
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--meta tags-->
+    <meta charset="UTF-8">
+
+    <!--links-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="shortcut icon" href="../../../links/image/avocado-png-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../links/style/fixed-properties.css">
+    <link rel="stylesheet" href="../../../links/style/general-style-user.css">
+    <link rel="stylesheet" media="screen and (color)" href="../../../links/style/media-queries/general-style-user-media-phone.css">
+    <link rel="stylesheet" media="screen and (color)" href="../../../links/style/media-queries/general-style-user-media-middle.css">
+    <script src="../../../links/scripts/user-script.js"></script>
+
+    <!--Another-->
+    <title id="title">{{message}}</title>
+
+</head>
+<body class="image-block wallpaper-block">
+
+<!--topbar-->
+<div class="horizon-display-center topbar-content-block">
+    <div class="image-block logotype-block"></div>
+    <p class="text-black text-size-hard gilroy-bold topbar-service-name"> Авокадо</p>
+    <p class="button-form text-size-easy text-white gilroy-medium">Выйти</p>
+</div>
+
+<!--general-->
+<div class="general-content-block horizon-display-center">
+
+    <!--refactor-->
+    <div class="refactor-block vertical-display-around" id="user-refactor">
+        <record-user></record-user>
+        <p class="button-record text-size-easy text-white gilroy-medium">Удалить мою учетную запись</p>
+    </div>
+
+    <div class="vertical-display-around chooser-creation-table-block-for-media">
+
+        <!--chooser-->
+        <div class="block-around-selection vertical-display-center">
+             <div class="select-form vertical-display-center">
+                <p class="option-form text-green text-size-easy gilroy-bold">Выберите тип таблицы</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Ваши заказы</p>
+                <p class="option-form text-green text-size-easy gilroy-medium">Активные заказы</p>
+            </div>
+        </div>
+
+        <!--creation-->
+        <form class="home-form home-form-background-special-two vertical-display-around">
+            <p class="gilroy-medium text-size-hard text-white send-us-text">Добавьте задачу</p>
+            <div class="select-form-in-creation vertical-display-center">
+                <p class="option-form-in-creation text-green text-size-easy gilroy-bold">Выберите тип заказа</p>
+            </div>
+            <div class="select-form-in-creation vertical-display-center">
+                <p class="option-form-in-creation text-green text-size-easy gilroy-bold">Выберите степень срочности</p>
+                <p class="option-form-in-creation text-green text-size-easy gilroy-medium">не срочно</p>
+                <p class="option-form-in-creation text-green text-size-easy gilroy-medium">сегодня</p>
+                <p class="option-form-in-creation text-green text-size-easy gilroy-medium">срочно</p>
+            </div>
+            <div class="select-form-in-creation vertical-display-center">
+                <p class="option-form-in-creation text-green text-size-easy gilroy-bold">Выберите исполнителя</p>
+            </div>
+            <textarea class="textarea-form text-size-easy text-black" placeholder="Подробнее"></textarea>
+            <p class="button-form-in-creation text-size-easy text-white gilroy-medium">Добавить</p>
+        </form>
+
+        <!--table-->
+        <div class="block-around-table horizon-display-between" id="table">
+            <div class="special-icon image-block"></div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<div class="horizon-display-center footer-content-block">
+    <p class="text-grey text-size-easy gilroy-bold footer-service-producer" id="place">© Melnik 2020 - {{ message }}</p>
+</div>
+
+<script>
+
+    /*Ваши заказы*/
+    var myRecord = Vue.component('my-record', {
+        data: function () {
+            return {
+                id: '',
+                type: '',
+                urgency: 'срочно',
+                executor: '',
+                openDate: '',
+                description: '',
+                ready: 1,
+            }
+        },
+        methods: {
+            setRecord (id_, type_, urgency_, executor_, openDate_, description_, ready_) {
+                this.id = id_;
+                this.type = type_;
+                this.urgency = urgency_;
+                this.executor = executor_;
+                this.openDate = openDate_;
+                this.description = description_;
+                this.ready = ready_;
+            },
+            setUrgency (urgency_) {
+                if (urgency_ == "срочно") {
+                    return "indianred"
+                };
+                if (urgency_ == "сегодня") {
+                    return "steelblue"
+                };
+            },
+            setReady (n) {
+                this.ready = n;
+            },
+        },
+        template: '<div v-if="ready != 3 && ready != 0" class="record vertical-display-between"> \n' +
+            '<div class="record-information-block"> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Заказ номер: {{id}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Категория заказа: {{type}}</p> \n' +
+            '<p v-bind:style="{color: setUrgency(urgency)}" class="gilroy-regular text-green text-size-easy information-media">Степень срочности: {{urgency}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Исполнитель: {{executor}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Дата начала: {{openDate}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Подробно: {{description}}</p> \n' +
+            '</div> \n' +
+            '<div> \n' +
+            '<p v-if="ready == 2" @click="setReady(3)" class="button-record text-size-easy text-white gilroy-medium">Подтвердить выполнение</p> \n' +
+            '<p v-if="ready == 2" @click="setReady(1)" class="button-record text-size-easy text-white gilroy-medium">Отрицать выполнение</p> \n' +
+            '<p @click="setReady(0)" class="button-record text-size-easy text-white gilroy-medium">Удалить мой заказ</p> \n' +
+            '</div> \n' +
+            '</div>',
+    })
+
+    /*Активные заказы*/
+    var otherRecord = Vue.component('other-record', {
+        data: function () {
+            return {
+                id: '',
+                urgency: 'срочно',
+                customer: '',
+                openDate: '',
+                description: '',
+                floor: '',
+                cabinet: '',
+                ready: 1,
+            }
+        },
+        methods: {
+            setRecord (id_, urgency_, customer_, openDate_, description_, floor_, cabinet_, ready_) {
+                this.id = id_;
+                this.urgency = urgency_;
+                this.customer = customer_;
+                this.openDate = openDate_;
+                this.description = description_;
+                this.floor = floor_;
+                this.cabinet = cabinet_;
+                this.ready = ready_;
+            },
+            setUrgency (urgency_) {
+                if (urgency_ == "срочно") {
+                    return "indianred"
+                };
+                if (urgency_ == "сегодня") {
+                    return "steelblue"
+                };
+            },
+            setReady () {
+                this.ready = 2;
+            },
+        },
+        template: '<div v-if="ready == 1" class="record vertical-display-between"> \n' +
+            '<div class="record-information-block"> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Заказ номер: {{id}}</p> \n' +
+            '<p v-bind:style="{color: setUrgency(urgency)}" class="gilroy-regular text-green text-size-easy information-media">Степень срочности: {{urgency}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Заказчик: {{customer}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Дата создания: {{openDate}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Этаж: {{floor}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Кабинет: {{cabinet}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Подробно: {{description}}</p> \n' +
+            '</div> \n' +
+            '<div> \n' +
+            '<p @click="setReady()" class="button-record text-size-easy text-white gilroy-medium">Готово</p> \n' +
+            '</div> \n' +
+            '</div>',
+    })
+
+    /*Запись user active в block-around-table*/
+    var recordUser = Vue.component('record-user', {
+        data: function () {
+            return {
+                login: '',
+                organisation: '',
+                adminLogin: '',
+                password: '',
+                date: '',
+                firstName: '',
+                lastName: '',
+                patronymic: '',
+                phone: '',
+                cabinet: '',
+                floor: '',
+                rating: '',
+                photo: '',
+            }
+        },
+        methods: {
+            setLogin (login_, organisation_, adminLogin_, password_, date_, firstName_, lastName_, patronymic_, phone_, cabinet_, floor_, rating_, photo_) {
+                this.login = login_;
+                this.organisation = organisation_;
+                this.adminLogin = adminLogin_;
+                this.password = password_;
+                this.date = date_;
+                this.firstName = firstName_;
+                this.lastName = lastName_;
+                this.patronymic = patronymic_;
+                this.phone = phone_;
+                this.cabinet = cabinet_;
+                this.floor = floor_;
+                this.rating = rating_;
+                this.photo = photo_;
+            },
+        },
+        template: '<div class="record vertical-display-between"> \n' +
+            '<div class="user-icon image-block"></div> \n' +
+            '<div class="record-information-block"> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Логин: {{login}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Логин организации: {{organisation}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Логин администратора: {{adminLogin}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Пароль: {{password}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Дата регистрации: {{date}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Имя: {{firstName}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Фамилия: {{lastName}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Отчество: {{patronymic}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Телефон или email: {{phone}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Кабинет: {{cabinet}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Этаж: {{floor}}</p> \n' +
+            '<p class="gilroy-regular text-green text-size-easy information-media">Рейтинг: {{rating}}</p> \n' +
+            '</div> \n' +
+            '</div>',
+    })
+
+    /*Инициализация user*/
+    new Vue ({el: '#user-refactor'})
+
+    /*Инициализация компонента таблицы*/
+    new Vue ({el: "#table"})
+
+    /*title*/
+    new Vue({
+        el: '#title',
+        data: {
+            message: "Имя пользователя",
+        },
+        methods: {
+            setName (message_) {
+                this.message = message_;
+            },
+        },
+    })
+
+    /*Дата для Футера*/
+    new Vue({
+        el: '#place',
+        data: {
+            message: new Date().getFullYear(),
+        },
+    })
+</script>
+</body>
+</html>

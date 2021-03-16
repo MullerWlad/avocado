@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--meta tags-->
+    <meta charset="UTF-8">
+
+    <!--links-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="shortcut icon" href="../../../links/image/avocado-png-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../links/style/fixed-properties.css">
+
+    <!--Используются те же стили, что и в user-->
+    <link rel="stylesheet" href="../../../links/style/general-style-user.css">
+    <link rel="stylesheet" media="screen and (color)" href="../../../links/style/media-queries/general-style-user-media-phone.css">
+    <link rel="stylesheet" media="screen and (color)" href="../../../links/style/media-queries/general-style-user-media-middle.css">
+
+    <script src="../../../links/scripts/zero-user-script.js"></script>
+
+    <!--Another-->
+    <title>Не подтверждено</title>
+
+</head>
+<body class="image-block wallpaper-block">
+
+<!--topbar-->
+<div class="horizon-display-center topbar-content-block">
+    <div class="image-block logotype-block"></div>
+    <p class="text-black text-size-hard gilroy-bold topbar-service-name"> Авокадо</p>
+    <p class="button-form text-size-easy text-white gilroy-medium">Выйти</p>
+</div>
+
+<!--general-->
+<div class="general-content-block horizon-display-center">
+    <div class="vertical-display-around">
+        <div class="image-block kaktus-icon"></div>
+        <p class="gilroy-medium text-green text-size-medium information-media">Ваш аккаунт не подтвержден</p>
+    </div>
+</div>
+
+<!--footer-->
+<div class="horizon-display-center footer-content-block">
+    <p class="text-grey text-size-easy gilroy-bold footer-service-producer" id="place">© Melnik 2020 - {{ message }}</p>
+</div>
+
+<script>
+
+    /*Дата для Футера*/
+    new Vue({
+        el: '#place',
+        data: {
+            message: new Date().getFullYear(),
+        },
+    })
+</script>
+</body>
+</html>
